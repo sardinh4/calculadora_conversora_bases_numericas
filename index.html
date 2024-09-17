@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convesor Númerico</title>
+</head>
+<body>
+    <header>
+        <h1>Conversor</h1> 
+
+        <button onclick="baseDecimal()">Decimal</button>
+        <button onclick="baseBinario()">Binário</button>
+        <button onclick="baseOctal()">Octal</button>
+        <button onclick="baseHexadecimal()">Hexadecimal</button>
+
+    </header>
+
+    <main>
+        <h3 id="base">Decimal</h3>
+
+        <hr>
+
+        <h4 id="conversao">Decimal para Binário</h4>
+
+        <input type="text" id="input_valor">
+
+        <button id="converterDecimal" onclick="converterDecimal()">Decimal</button>
+        <button id="converterBinario" onclick="converterBinario()">Binário</button>
+        <button id="converterOctal" onclick="converterOctal()">Octal</button>
+        <button id="converterHexadecimal" onclick="converterHexadecimal()">Hexadecimal</button>
+
+        <p>Resultado:</p>
+        <div id="resultado"></div>
+
+        <button onclick="calcular()">Calcular</button>
+
+    </main>
+
+    <footer>
+        <p>Informações: 1ADSA 2024</p>
+        <p>Leonardo Sardinha Santana - leonardo.ssantana@sptech.school</p>
+        <p>Vinicius Gonçalves da Costa - vinicius.gcosta@sptech.school</p>
+    </footer>
+</body>
+</html>
