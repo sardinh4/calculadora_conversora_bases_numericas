@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,47 +8,51 @@
 
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <header>
-        <h1>Conversor</h1> 
-
-        <button onclick="descobrirBaseAlterarMain(10)">Decimal</button>
-        <button onclick="descobrirBaseAlterarMain(2)">Binário</button>
-        <button onclick="descobrirBaseAlterarMain(8)">Octal</button>
-        <button onclick="descobrirBaseAlterarMain(16)">Hexadecimal</button>
-
-    </header>
-
-    <main>
-        <h3 id="base">Decimal</h3>
-
-        <hr>
-
-        <input type="text" id="input_valor">
-
-        <button id="converterDecimal" onclick="descobrirBaseConversaoSetaBaseCalcular(10)">Decimal</button>
-        <button id="converterBinario" onclick="descobrirBaseConversaoSetaBaseCalcular(2)">Binário</button>
-        <button id="converterOctal" onclick="descobrirBaseConversaoSetaBaseCalcular(8)">Octal</button>
-        <button id="converterHexadecimal" onclick="descobrirBaseConversaoSetaBaseCalcular(16)">Hexadecimal</button>
-        
-
-        <div id="button_calcular">
-            <button id="calcular" onclick="calcular()">Calcular</button>
-        </div>
-
-        <p>Resultado:</p>
-        <div id="resultado"></div>
-
-        
-
-    </main>
+    <div>
+        <header>
+            <h1 id="h1_titulo">Conversor</h1>
+            <div id="div_botoes_opcoes_bases">
+                <button onclick="descobrirBaseAlterarMain(10)">Decimal</button>
+                <button onclick="descobrirBaseAlterarMain(2)">Binário</button>
+                <button onclick="descobrirBaseAlterarMain(8)">Octal</button>
+                <button onclick="descobrirBaseAlterarMain(16)">Hexadecimal</button>
+            </div>
+    
+        </header>
+    
+        <main>
+            <h3 id="base">Decimal</h3>
+    
+            <input type="text" id="input_valor">
+    
+            <div id="">
+                <button id="converterDecimal" onclick="descobrirBaseConversaoSetaBaseCalcular(10)">Decimal</button>
+                <button id="converterBinario" onclick="descobrirBaseConversaoSetaBaseCalcular(2)">Binário</button>
+                <button id="converterOctal" onclick="descobrirBaseConversaoSetaBaseCalcular(8)">Octal</button>
+                <button id="converterHexadecimal" onclick="descobrirBaseConversaoSetaBaseCalcular(16)">Hexadecimal</button>
+            </div>
+    
+            <div id="button_calcular">
+                <button id="calcular" onclick="calcular()">Calcular</button>
+            </div>
+    
+            <h3>Resultado:</h3>
+            <div id="resultado"></div>
+    
+    
+        </main>
+    </div>
 
     <footer>
-        <p>Informações: 1ADSA 2024</p>
+        <h6>Informações: </h6>
         <p>Leonardo Sardinha Santana - leonardo.ssantana@sptech.school</p>
         <p>Vinicius Gonçalves da Costa - vinicius.gcosta@sptech.school</p>
+        <p>1º ADS A - 2024</p> 
     </footer>
 </body>
+
 </html>
 
 <script src="./script.js"></script>
