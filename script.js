@@ -33,7 +33,34 @@ function descobrirBaseConversaoSetaBaseCalcular(baseNumerica){
 }
 
 function calcular(baseNumerica){
-    
+
+    let valor = input_valor.value
+
+    if(document.getElementById('converterDecimal').style.display == 'none'){
+         document.getElementById('resultado').innerHTML =`${Number(valor).toString(baseNumerica)}`
+    } else if (document.getElementById('converterBinario').style.display == 'none'){
+        valor = parseInt(valor, 2)
+        
+        if(baseNumerica == 8 || baseNumerica == 16){
+            valor = valor.toString(baseNumerica)
+        }
+        document.getElementById('resultado').innerHTML =`${valor}`
+    } else if (document.getElementById('converterOctal').style.display == 'none'){
+        valor = parseInt(valor, 8)
+        
+        if(baseNumerica == 2 || baseNumerica == 16){
+            valor = valor.toString(baseNumerica)
+        }
+        document.getElementById('resultado').innerHTML =`${valor}`
+    } else if (document.getElementById('converterHexadecimal').style.display == 'none'){
+        valor = parseInt(valor, 16)
+        
+        if(baseNumerica == 2 || baseNumerica == 8){
+            valor = valor.toString(baseNumerica)
+        }
+        document.getElementById('resultado').innerHTML =`${valor}`
+    }
+
 }
 
 document.addEventListener("DOMContentLoaded", descobrirBaseAlterarMain(10))
