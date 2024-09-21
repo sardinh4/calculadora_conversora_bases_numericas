@@ -37,3 +37,7 @@ function calcular(baseNumerica){
 }
 
 document.addEventListener("DOMContentLoaded", descobrirBaseAlterarMain(10))
+
+function alterarCorMenu(menu){
+    document.getElementById(`${menu}`).id += 'menu_selecionado'
+}
