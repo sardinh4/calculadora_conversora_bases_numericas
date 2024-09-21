@@ -14,10 +14,10 @@
         <header>
             <h1 id="h1_titulo">Conversor</h1>
             <div id="div_botoes_opcoes_bases">
-                <button onclick="descobrirBaseAlterarMain(10)">Decimal</button>
-                <button onclick="descobrirBaseAlterarMain(2)">Binário</button>
-                <button onclick="descobrirBaseAlterarMain(8)">Octal</button>
-                <button onclick="descobrirBaseAlterarMain(16)">Hexadecimal</button>
+                <button id="button_decimal" onclick="alterarConteudoMainBase(10), alterarCorMenu('button_decimal')">Decimal</button>
+                <button id="button_binario" onclick="alterarConteudoMainBase(2), alterarCorMenu('button_binario')">Binário</button>
+                <button id="button_octal" onclick="alterarConteudoMainBase(8), alterarCorMenu('button_octal')">Octal</button>
+                <button id="button_hexadecimal" onclick="alterarConteudoMainBase(16), alterarCorMenu('button_hexadecimal')">Hexadecimal</button>
             </div>
     
         </header>
@@ -28,14 +28,14 @@
             <input type="text" id="input_valor">
     
             <div id="">
-                <button id="converterDecimal" onclick="descobrirBaseConversaoSetaBaseCalcular(10)">Decimal</button>
-                <button id="converterBinario" onclick="descobrirBaseConversaoSetaBaseCalcular(2)">Binário</button>
-                <button id="converterOctal" onclick="descobrirBaseConversaoSetaBaseCalcular(8)">Octal</button>
-                <button id="converterHexadecimal" onclick="descobrirBaseConversaoSetaBaseCalcular(16)">Hexadecimal</button>
+                <button id="converterDecimal" onclick="setaBaseConversao(10)">Decimal</button>
+                <button id="converterBinario" onclick="setaBaseConversao(2)">Binário</button>
+                <button id="converterOctal" onclick="setaBaseConversao(8)">Octal</button>
+                <button id="converterHexadecimal" onclick="setaBaseConversao(16)">Hexadecimal</button>
             </div>
     
             <div id="button_calcular">
-                <button id="calcular" onclick="calcular()">Calcular</button>
+                <button id="calcular" onclick="converterBaseNumerica()">Converter</button>
             </div>
     
             <h3>Resultado:</h3>

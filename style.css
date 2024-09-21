@@ -94,8 +94,8 @@ footer{
   }
 }
 
-#menu_selecionado{
-  color: var(--cor-terciaria);
+.menu_selecionado{
+  color: var(--cor-quartenaria);
 }
 
 

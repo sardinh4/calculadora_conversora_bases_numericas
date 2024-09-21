@@ -1,57 +1,61 @@
-function descobrirBaseAlterarMain(baseNumerica){
-    var base = document.getElementById('base')
+function alterarConteudoMainBase(baseNumerica){
+    let base
+    let decimalDisplay = 'inline-block', binarioDisplay = 'inline-block', octalDisplay = 'inline-block', hexadecimalDisplay = 'inline-block';
     
     if(baseNumerica == 10){
-        base.innerHTML = "Decimal"
-        document.getElementById('converterDecimal').style.display = 'none';
-        document.getElementById('converterBinario').style.display = 'inline-block';
-        document.getElementById('converterOctal').style.display = 'inline-block';
-        document.getElementById('converterHexadecimal').style.display = 'inline-block';
+        base = "Decimal"
+        decimalDisplay = 'none'
+
     } else if (baseNumerica == 2){
-        base.innerHTML = "Binário"
-        document.getElementById('converterDecimal').style.display = 'inline-block';
-        document.getElementById('converterBinario').style.display = 'none';
-        document.getElementById('converterOctal').style.display = 'inline-block';
-        document.getElementById('converterHexadecimal').style.display = 'inline-block';
+        base = "Binário"
+        binarioDisplay = 'none'
+    
     } else if (baseNumerica == 8){
-        base.innerHTML = "Octal"
-        document.getElementById('converterDecimal').style.display = 'inline-block';
-        document.getElementById('converterBinario').style.display = 'inline-block';
-        document.getElementById('converterOctal').style.display = 'none';
-        document.getElementById('converterHexadecimal').style.display = 'inline-block';
+        base = "Octal"
+        octalDisplay = 'none'
+  
     } else if (baseNumerica == 16){
-        base.innerHTML = "Hexadecimal"
-        document.getElementById('converterDecimal').style.display = 'inline-block';
-        document.getElementById('converterBinario').style.display = 'inline-block';
-        document.getElementById('converterOctal').style.display = 'inline-block';
-        document.getElementById('converterHexadecimal').style.display = 'none';
+        base = "Hexadecimal"
+        hexadecimalDisplay = 'none'
     }
+
+    document.getElementById('base').innerHTML = base
+    document.getElementById('converterDecimal').style.display = decimalDisplay
+    document.getElementById('converterBinario').style.display = binarioDisplay
+    document.getElementById('converterOctal').style.display = octalDisplay
+    document.getElementById('converterHexadecimal').style.display = hexadecimalDisplay
 }
 
-function descobrirBaseConversaoSetaBaseCalcular(baseNumerica){     
-    document.getElementById('button_calcular').innerHTML = `<button id="calcular" onclick="calcular(${baseNumerica})">Calcular</button>`
+function setaBaseConversao(baseNumerica){     
+    document.getElementById('button_calcular').innerHTML = `
+    <button id="calcular" onclick="converterBaseNumerica(${baseNumerica})">Converter</button>
+    `
 }
 
-function calcular(baseNumerica){
+function converterBaseNumerica(baseNumerica){
 
     let valor = input_valor.value
 
     if(document.getElementById('converterDecimal').style.display == 'none'){
-         document.getElementById('resultado').innerHTML =`${Number(valor).toString(baseNumerica)}`
+
+         document.getElementById('resultado').innerHTML =`${Number(valor).toString(baseNumerica).toUpperCase()}`
+
     } else if (document.getElementById('converterBinario').style.display == 'none'){
         valor = parseInt(valor, 2)
         
         if(baseNumerica == 8 || baseNumerica == 16){
-            valor = valor.toString(baseNumerica)
+            valor = valor.toString(baseNumerica).toUpperCase()
         }
         document.getElementById('resultado').innerHTML =`${valor}`
+
     } else if (document.getElementById('converterOctal').style.display == 'none'){
         valor = parseInt(valor, 8)
         
         if(baseNumerica == 2 || baseNumerica == 16){
-            valor = valor.toString(baseNumerica)
+            valor = valor.toString(baseNumerica).toUpperCase()
         }
         document.getElementById('resultado').innerHTML =`${valor}`
+
     } else if (document.getElementById('converterHexadecimal').style.display == 'none'){
         valor = parseInt(valor, 16)
         
@@ -63,8 +67,13 @@ function calcular(baseNumerica){
 
 }
 
-document.addEventListener("DOMContentLoaded", descobrirBaseAlterarMain(10))
-
 function alterarCorMenu(menu){
-    document.getElementById(`${menu}`).id += 'menu_selecionado'
+    document.getElementById(`button_decimal`).classList.remove('menu_selecionado')
+    document.getElementById(`button_binario`).classList.remove('menu_selecionado')
+    document.getElementById(`button_octal`).classList.remove('menu_selecionado')
+    document.getElementById(`button_hexadecimal`).classList.remove('menu_selecionado')
+
+    document.getElementById(`${menu}`).classList.add('menu_selecionado')
 }
+
+document.addEventListener("DOMContentLoaded", alterarConteudoMainBase(10), alterarCorMenu('button_decimal'))
