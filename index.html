@@ -14,47 +14,60 @@
         <header>
             <h1 id="h1_titulo">Conversor</h1>
             <div id="div_botoes_opcoes_bases">
-                <button id="button_decimal" onclick="alterarConteudoMainBase(10), alterarCorMenu('button_decimal')">Decimal</button>
-                <button id="button_binario" onclick="alterarConteudoMainBase(2), alterarCorMenu('button_binario')">Binário</button>
-                <button id="button_octal" onclick="alterarConteudoMainBase(8), alterarCorMenu('button_octal')">Octal</button>
-                <button id="button_hexadecimal" onclick="alterarConteudoMainBase(16), alterarCorMenu('button_hexadecimal')">Hexadecimal</button>
-            </div>
-    
-        </header>
-    
-        <main>
-            <h3 id="base">Decimal</h3>
-    
-            <input type="text" id="input_valor">
-    
-            <div id="">
-                <button id="converterDecimal" onclick="setaBaseConversao(10)">Decimal</button>
-                <button id="converterBinario" onclick="setaBaseConversao(2)">Binário</button>
-                <button id="converterOctal" onclick="setaBaseConversao(8)">Octal</button>
-                <button id="converterHexadecimal" onclick="setaBaseConversao(16)">Hexadecimal</button>
-            </div>
-    
-            <div id="button_calcular">
-                <button id="calcular" onclick="converterBaseNumerica()">Converter</button>
-            </div>
-    
-            <h3>Resultado:</h3>
-            <div id="resultado"></div>
-    
-            <div>
-                
+                <button id="button_decimal"
+                    onclick="alterarConteudoMainBase(10), alterarCorMenu('button_decimal')">Decimal</button>
+                <button id="button_binario"
+                    onclick="alterarConteudoMainBase(2), alterarCorMenu('button_binario')">Binário</button>
+                <button id="button_octal"
+                    onclick="alterarConteudoMainBase(8), alterarCorMenu('button_octal')">Octal</button>
+                <button id="button_hexadecimal"
+                    onclick="alterarConteudoMainBase(16), alterarCorMenu('button_hexadecimal')">Hexadecimal</button>
             </div>
 
+        </header>
+
+        <main>
+        
+            <section id="section_container">
+                <section id="section_converter">
+                    <h3 id="h3_sub_titulo_base_original">Decimal</h3>
+
+                    <div id="div_input_valor">
+                        <input type="text" id="input_valor" placeholder="| Digite aqui o número:">
+                    </div>
+
+                    <p>escolha uma base de conversão:</p>
+
+                    <div id="div_botoes_baseConversao">
+                        <button id="converterDecimal" onclick="setaBaseConversao(10), alterarCorBotaoBaseConversao('converterDecimal')">Decimal</button>
+                        <button id="converterBinario" onclick="setaBaseConversao(2), alterarCorBotaoBaseConversao('converterBinario')">Binário</button>
+                        <button id="converterOctal" onclick="setaBaseConversao(8),alterarCorBotaoBaseConversao('converterOctal')">Octal</button>
+                        <button id="converterHexadecimal" onclick="setaBaseConversao(16), alterarCorBotaoBaseConversao('converterHexadecimal')">Hexadecimal</button>
+                    </div>
+
+                    <div id="button_converter">
+                        <button id="converter" onclick="converterBaseNumerica()">Converter</button>
+                    </div>
+                </section>
+
+                <h3 id="h3_sub_titulo_para">para</h3>
+
+                <section id="section_resultado">
+                    <h3 id="h3_sub_titulo_base_conversao"></h3>
+                    <h3 id="h3_resultado">Resultado:</h3>
+                    <div id="resultado"></div>
+                </section>
+            </section>
 
         </main>
     </div>
 
     <footer>
-        <h6>Informações: </h6>
         <p>Leonardo Sardinha Santana - leonardo.ssantana@sptech.school</p>
         <p>Vinicius Gonçalves da Costa - vinicius.gcosta@sptech.school</p>
-        <p>1º ADS A - 2024</p> 
+        <p>1º ADS A - 2024</p>
     </footer>
+
 </body>
 
 </html>
