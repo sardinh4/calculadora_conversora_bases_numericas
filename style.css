@@ -61,7 +61,7 @@ header {
 
 main {
   height: 65vh;
-  width: 100vw;
+  width: 100%;
   background-color: var(--cor-secundaria);
   padding: var(--padding);
   display: flex;
@@ -73,7 +73,7 @@ main {
     color: var(--cor-principal);
   }
 
-  #h3_sub_titulo_base_original{
+  #h3_sub_titulo_base_original {
     padding: 10px 60px;
     margin: 10px 10px 30px 10px;
     width: 90%;
@@ -84,7 +84,7 @@ main {
     color: var(--cor-secundaria);
   }
 
-  #h3_sub_titulo_para{
+  #h3_sub_titulo_para {
     color: var(--cor-principal);
   }
 
@@ -98,7 +98,7 @@ main {
     height: 100%;
   }
 
-  #section_converter{
+  #section_converter {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,10 +108,9 @@ main {
     border-radius: 25px;
     width: 100%;
     height: 100%;
-
   }
 
-  #div_input_valor{
+  #div_input_valor {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -119,22 +118,11 @@ main {
     justify-content: center;
   }
 
-  & input, input:focus, input:hover, input:active {
-    color: var(--cor-secundaria);
-    cursor: pointer;
-    outline: none; /* Remove o contorno no foco */
-    border: none; /* Remove qualquer borda no foco */
-    font-size: 30px;
-    background: none; /* Remove fundo em hover/foco */
-    width: 100%;
-    text-align: center;
-  }
-  
-  & p{
+  & p {
     color: var(--cor-secundaria);
   }
 
-  #div_botoes_baseConversao{
+  #div_botoes_baseConversao {
     width: 90%;
     display: flex;
     align-items: center;
@@ -142,20 +130,20 @@ main {
     gap: 20px;
   }
 
-  & button{
+  & button {
     background-color: var(--cor-secundaria);
     width: 150px;
     border-radius: 5px;
     cursor: pointer;
   }
 
-  & button:hover{
+  & button:hover {
     background-color: var(--cor-terciaria);
     color: var(--cor-secundaria);
     font-weight: bold;
   }
 
-  #h3_sub_titulo_para{
+  #h3_sub_titulo_para {
     font-size: 32px;
   }
 
@@ -171,8 +159,8 @@ main {
     width: 100%;
     height: 100%;
   }
-  
-  #h3_sub_titulo_base_conversao {
+
+  .h3_sub_titulo_base_conversao {
     padding: 10px 60px;
     margin: 10px 10px 30px 10px;
     width: 90%;
@@ -183,14 +171,13 @@ main {
     color: var(--cor-secundaria);
   }
 
-
-  #h3_resultado{
+  .h3_resultado {
     color: var(--cor-secundaria);
     text-align: center;
     font-size: 30px;
   }
 
-  #resultado{
+  .resultado {
     height: 40%;
     width: 90%;
     border: solid 1px var(--cor-secundaria);
@@ -200,13 +187,112 @@ main {
     align-items: center;
     justify-content: center;
   }
+}
 
-  #p_resultado{
-    color: var(--cor-principal);
-    text-align: center;
-    font-size: 32px;
-  }
-  
+#p_resultado {
+  color: var(--cor-principal);
+  text-align: center;
+  font-size: 32px;
+}
+
+#input_valor,
+#input_valor:focus,
+#input_valor:hover,
+#input_valor:active {
+  color: var(--cor-secundaria);
+  cursor: pointer;
+  outline: none; /* Remove o contorno no foco */
+  border: none; /* Remove qualquer borda no foco */
+  font-size: 30px;
+  background: none; /* Remove fundo em hover/foco */
+  width: 100%;
+  text-align: center;
+}
+
+
+
+#main_calculadora {
+  background-color: var(--cor-secundaria);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#section_entrada_dados_calculadora,
+#section_resultado_calculadora {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 30px 0;
+  background-color: var(--cor-principal);
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  max-width: 42vw;
+}
+
+.div_input_valores{
+  background-color: var(--cor-secundaria);
+  border-radius: 10px;
+  display: flex;
+}
+
+.input_valores_calculadora,
+.input_valores_calculadora:focus,
+.input_valores_calculadora:hover,
+.input_valores_calculadora:active {
+  color: var(--cor-principal);
+  cursor: pointer;
+  outline: none; /* Remove o contorno no foco */
+  border: none; /* Remove qualquer borda no foco */
+  font-size: 25px;
+  background: none; /* Remove fundo em hover/foco */
+  width: 100%;
+  text-align: center;
+}
+
+#select_operador,
+#select_operador:focus,
+#select_operador:hover,
+#select_operador:active {
+  color: var(--cor-secundaria);
+  cursor: pointer;
+  outline: none; /* Remove o contorno no foco */
+  border: none; /* Remove qualquer borda no foco */
+  font-size: 25px;
+  background: none; /* Remove fundo em hover/foco */
+  width: 100%;
+  text-align: center;
+}
+
+.input_valores_calculadora{
+  color: var(--cor-principal);
+}
+
+.input_operador{
+  font-size: 20px;
+}
+
+#div_calcular{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+#h4_calcular_em{
+  color: var(--cor-secundaria);
+  font-size: 20px;
+}
+
+#div_botoes_base_conversao_calculadora{
+  display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 colunas */
+            grid-template-rows: 1fr 1fr;    /* 2 linhas */
+            gap: 10px;
 }
 
 footer {
@@ -226,7 +312,7 @@ footer {
   color: var(--cor-quartenaria);
 }
 
-.botao_selecionado{
+.botao_selecionado {
   background-color: var(--cor-terciaria);
   color: var(--cor-secundaria);
   font-weight: bold;

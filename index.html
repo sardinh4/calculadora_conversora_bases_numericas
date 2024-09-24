@@ -26,8 +26,8 @@
 
         </header>
 
-        <main>
-        
+        <main id="main_conversor">
+
             <section id="section_container">
                 <section id="section_converter">
                     <h3 id="h3_sub_titulo_base_original">Decimal</h3>
@@ -39,10 +39,14 @@
                     <p>escolha uma base de conversão:</p>
 
                     <div id="div_botoes_baseConversao">
-                        <button id="converterDecimal" onclick="setaBaseConversao(10), alterarCorBotaoBaseConversao('converterDecimal')">Decimal</button>
-                        <button id="converterBinario" onclick="setaBaseConversao(2), alterarCorBotaoBaseConversao('converterBinario')">Binário</button>
-                        <button id="converterOctal" onclick="setaBaseConversao(8),alterarCorBotaoBaseConversao('converterOctal')">Octal</button>
-                        <button id="converterHexadecimal" onclick="setaBaseConversao(16), alterarCorBotaoBaseConversao('converterHexadecimal')">Hexadecimal</button>
+                        <button id="converterDecimal"
+                            onclick="setaBaseConversao(10), alterarCorBotaoBaseConversao('converterDecimal')">Decimal</button>
+                        <button id="converterBinario"
+                            onclick="setaBaseConversao(2), alterarCorBotaoBaseConversao('converterBinario')">Binário</button>
+                        <button id="converterOctal"
+                            onclick="setaBaseConversao(8),alterarCorBotaoBaseConversao('converterOctal')">Octal</button>
+                        <button id="converterHexadecimal"
+                            onclick="setaBaseConversao(16), alterarCorBotaoBaseConversao('converterHexadecimal')">Hexadecimal</button>
                     </div>
 
                     <div id="button_converter">
@@ -53,69 +57,84 @@
                 <h3 id="h3_sub_titulo_para">para</h3>
 
                 <section id="section_resultado">
-                    <h3 id="h3_sub_titulo_base_conversao"></h3>
-                    <h3 id="h3_resultado">Resultado:</h3>
-                    <div id="resultado"></div>
+                    <h3 class="h3_sub_titulo_base_conversao" id="h3_sub_titulo_base_conversao"></h3>
+                    <h3 class="h3_resultado" id="h3_resultado">Resultado:</h3>
+                    <div class="resultado" id="resultado"></div>
                 </section>
             </section>
 
         </main>
     </div>
-    
-    <div id="div_calculadora">
-      
-      <header>
-            <h1 id="h1_titulo">Conversor</h1>
-        </header>
-        
-      <main>
-        <section id="section_opcoes">
-                <div id="div_calculadora_primeiro_valor">
-                  <input type="text" id="input_calculadora_primeiro_numero">
-                  <div id="div_botoes_baseConversao">
-                    <button id="converterDecimal" onclick="setaBaseConversao(10), alterarCorBotaoBaseConversao('converterDecimal')">Decimal</button>
-                    <button id="converterBinario" onclick="setaBaseConversao(2), alterarCorBotaoBaseConversao('converterBinario')">Binário</button>
-                    <button id="converterOctal" onclick="setaBaseConversao(8),alterarCorBotaoBaseConversao('converterOctal')">Octal</button>
-                    <button id="converterHexadecimal" onclick="setaBaseConversao(16), alterarCorBotaoBaseConversao('converterHexadecimal')">Hexadecimal</button>
-                  </div>
-          
-          
-                </div>
-                <div id="div_operador">
-                  <input type="number" id="input_operador">
-                </div>
-                <div id="div_calculadora_segubdo_valor">
-                  <input type="text" id="input_calculadora_segundo_numero">
-                  <div id="div_botoes_baseConversao">
-                    <button id="converterDecimal" onclick="setaBaseConversao(10), alterarCorBotaoBaseConversao('converterDecimal')">Decimal</button>
-                    <button id="converterBinario" onclick="setaBaseConversao(2), alterarCorBotaoBaseConversao('converterBinario')">Binário</button>
-                    <button id="converterOctal" onclick="setaBaseConversao(8),alterarCorBotaoBaseConversao('converterOctal')">Octal</button>
-                    <button id="converterHexadecimal" onclick="setaBaseConversao(16), alterarCorBotaoBaseConversao('converterHexadecimal')">Hexadecimal</button>
-                  </div>
-          
-          
-                </div>
-                <div id="div_calcular">
-                  <h4>Calcular em:</h4>
-                  <div id="div_botoes_baseConversao">
-                    <button id="converterDecimal" onclick="setaBaseConversao(10), alterarCorBotaoBaseConversao('converterDecimal')">Decimal</button>
-                    <button id="converterBinario" onclick="setaBaseConversao(2), alterarCorBotaoBaseConversao('converterBinario')">Binário</button>
-                    <button id="converterOctal" onclick="setaBaseConversao(8),alterarCorBotaoBaseConversao('converterOctal')">Octal</button>
-                    <button id="converterHexadecimal" onclick="setaBaseConversao(16), alterarCorBotaoBaseConversao('converterHexadecimal')">Hexadecimal</button>
-                  </div>
-                </div>
-        </section>
-      
-      </main>
-      
-      <section id="section_resultado">
-          <h3 id="h3_sub_titulo_base_conversao"></h3>
-          <h3 id="h3_resultado">Resultado:</h3>
-          <div id="resultado"></div>
-      </section>
-      
 
-      
+    <div id="div_calculadora">
+
+        <header>
+            <h1 id="h1_titulo">Calculadora</h1>
+        </header>
+
+        <main id="main_calculadora">
+            <section id="section_entrada_dados_calculadora">
+                <div class="div_input_valores" id="div_calculadora_primeiro_valor">
+
+                    <input type="text" placeholder="| Primeiro valor" class="input_valores_calculadora" id="input_calculadora_primeiro_numero">
+                    <select name="" id="select_base_primeiro_valor">
+                        <option value="10">Decimal</option>
+                        <option value="2">Binário</option>
+                        <option value="8">Octal</option>
+                        <option value="16">Hexadecimal</option>
+                    </select>
+                </div>
+
+                <div id="div_operador">
+                    <select name="" id="select_operador">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">x</option>
+                        <option value="/">/</option>
+                    </select>
+                </div>
+
+                <div class="div_input_valores" id="div_calculadora_segundo_valor">
+
+                    <input type="text" placeholder="| Segundo valor" class="input_valores_calculadora" id="input_calculadora_segundo_numero">
+                    <select name="" id="select_base_segundo_valor">
+                        <option value="10">Decimal</option>
+                        <option value="2">Binário</option>
+                        <option value="8">Octal</option>
+                        <option value="16">Hexadecimal</option>
+                    </select>
+
+                </div>
+
+                <div id="div_calcular">
+
+                    <h4 id="h4_calcular_em">Calcular em:</h4>
+
+                    <div id="div_botoes_base_conversao_calculadora">
+                        <button id="converter_decimal_calculadora"
+                            onclick="calcularValor(10, 'converter_decimal_calculadora')">Decimal</button>
+                        <button id="converter_binario_calculadora"
+                            onclick="calcularValor(2, 'converter_binario_calculadora')">Binário</button>
+                        <button id="converter_octal_calculadora"
+                            onclick="calcularValor(8, 'converter_octal_calculadora')">Octal</button>
+                        <button id="converter_hexadecimal_calculadora"
+                            onclick="calcularValor(16, 'converter_hexadecimal_calculadora')">Hexadecimal</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section_resultado_calculadora">
+                <h3 id="h3_sub_titulo_base_conversao_calculadora" class="h3_sub_titulo_base_conversao">Binário</h3>
+                <h3 class="h3_resultado">Resultado:</h3>
+                <div id="resultado_calculadora" class="resultado"></div>
+            </section>
+
+        </main>
+
+
+
+
+
     </div>
 
     <footer>

@@ -59,7 +59,7 @@ function setaBaseConversao(baseNumerica){
         baseConversao = "Hexadecimal"     
     }
 
-     document.getElementById('section_resultado').style.display = 'flex'
+    document.getElementById('section_resultado').style.display = 'flex'
     document.getElementById('h3_sub_titulo_base_original').innerHTML = `${baseOriginal}`
     document.getElementById('h3_sub_titulo_para').style.display = 'inline-block'
     document.getElementById('h3_sub_titulo_base_conversao').innerHTML = `${baseConversao}`
@@ -111,7 +111,7 @@ function alterarCorMenu(menu){
 
     document.getElementById(`${menu}`).classList.add('menu_selecionado')
 
-    alterarCorBotaoBaseConversao()
+    alterarCorBotaoBaseConversao('reseta')
 }
 
 function alterarCorBotaoBaseConversao(menu){
@@ -120,9 +120,69 @@ function alterarCorBotaoBaseConversao(menu){
     document.getElementById(`converterOctal`).classList.remove('botao_selecionado')
     document.getElementById(`converterHexadecimal`).classList.remove('botao_selecionado')
 
-    document.getElementById(`${menu}`).classList.add('botao_selecionado')
-
-    document.getElementById('p_resultado').innerHTML = ''
+    if(menu != 'reseta'){
+        document.getElementById(`${menu}`).classList.add('botao_selecionado')
+    }
+    if(document.getElementById('p_resultado')){
+        document.getElementById('p_resultado').innerHTML = ''
+    }
+    
 }
+
+function calcularValor(baseNumerica, botao){
+
+    document.getElementById(`converter_decimal_calculadora`).classList.remove('botao_selecionado')
+    document.getElementById(`converter_binario_calculadora`).classList.remove('botao_selecionado')
+    document.getElementById(`converter_octal_calculadora`).classList.remove('botao_selecionado')
+    document.getElementById(`converter_hexadecimal_calculadora`).classList.remove('botao_selecionado')
+
+    document.getElementById(`${botao}`).classList.add('botao_selecionado')
+
+
+    const basePrimeiroNumero = document.getElementById("select_base_primeiro_valor").value  
+    const primeiroNumero = parseInt(document.getElementById("input_calculadora_primeiro_numero").value, basePrimeiroNumero)
+    const operador = document.getElementById("select_operador").value
+    const baseSegundoNumero = document.getElementById("select_base_segundo_valor").value
+    const segundoNumero = parseInt(document.getElementById("input_calculadora_segundo_numero").value, baseSegundoNumero)
+
+    var resultado
+
+    if(operador == '+'){
+        resultado = primeiroNumero + segundoNumero
+    }else if(operador == '-'){
+        resultado = primeiroNumero - segundoNumero
+    } else if(operador == '*'){
+        resultado = primeiroNumero * segundoNumero
+    } else{
+        resultado = primeiroNumero / segundoNumero
+    }
+
+    let baseConversao
+
+    if(baseNumerica == 10){
+        baseConversao = "Decimal"
+
+    } else if (baseNumerica == 2){
+        baseConversao = "Binário"
+        resultado = resultado.toString(baseNumerica)
+    
+    } else if (baseNumerica == 8){
+        baseConversao = "Octal"
+        resultado = resultado.toString(baseNumerica)
+  
+    } else if (baseNumerica == 16){
+        baseConversao = "Hexadecimal"    
+        resultado = resultado.toString(baseNumerica).toUpperCase()
+    }
+
+    
+
+    document.getElementById('h3_sub_titulo_base_conversao').innerHTML = `${baseConversao}`
+
+    document.getElementById('resultado_calculadora').innerHTML = `<p id="p_resultado">${resultado}</p>`
+
+    
+}
+
 
 document.addEventListener("DOMContentLoaded", alterarConteudoMainBase(10), alterarCorMenu('button_decimal'))
